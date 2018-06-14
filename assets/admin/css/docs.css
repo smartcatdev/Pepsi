@@ -1,0 +1,343 @@
+#pepsi-docs {
+    font-family: Lato;
+}
+
+#pepsi-docs > h2 {
+    margin-bottom: 30px;
+}
+
+.icon-rotate {
+    animation: rotate 2s 2;
+}
+
+@keyframes rotate {
+    
+    100% {
+        transform: rotateY( 360deg );
+    }
+    
+}
+
+.quickstart-cta {
+    width: 33%;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.quickstart-cta a {
+    color: #666;
+    text-decoration: none;
+    padding: 0 15px;
+    display: block;
+}
+
+.quickstart-cta span.fas {
+    width: 60%;
+    height: 100px;
+    border-radius: 5px;
+    line-height: 100px;
+    font-size: 60px;
+    margin: 0 auto;
+}
+
+.quickstart-cta .quickstart-label {
+    margin: 15px 0 0px 0;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.section-heading {
+    padding: 70px 15px 15px 0px;
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: 100;
+    font-size: 46px;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    margin-top: 0;
+}
+
+.sub-section h4 {
+    margin-top: 30px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    font-weight: 900;
+}
+
+.sub-heading {
+    font-size: 36px;
+    color: #0273aa;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    font-weight: 400;
+    margin: 0;
+}
+
+section.sub-section > .sub-heading:first-child {
+    padding-top: 60px;
+}
+
+#pepsi-flex-wrap {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+#pepsi-docs-menu {
+    background: white;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    padding: 5px;
+    min-width: 220px;
+}
+
+div#pepsi-docs-content {
+    background: white;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 100px;
+}
+
+div#pepsi-docs-content p {
+    font-weight: 300;
+    line-height: normal;
+    font-size: 18px;
+}
+
+ul.parent-nav {
+    list-style: none;
+    min-width: 175px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+ul.parent-nav a:focus {
+    color: #777;
+}
+
+ul.parent-nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.parent-nav ul.child-nav {
+    padding: 15px 15px 5px;
+}
+
+ul.parent-nav a {
+    display: block;
+    line-height: normal;
+    color: #777;
+    transition: .3s ease;
+    text-decoration: none;
+}
+
+ul.parent-nav a:hover {
+    text-decoration: none;
+    opacity: 1;
+    color: #000000;
+}
+
+ul.parent-nav > li > a {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+ul.parent-nav > li > a.active,
+ul.parent-nav > li > a:hover {
+    color: #000000;
+}
+
+ul.parent-nav > li {
+    font-size: 16px;
+    color: #777;
+}
+
+ul.parent-nav > li > ul:before {
+    content: '';
+    position: absolute;
+    top: 1.75em;
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid #ddd;
+}
+
+ul.parent-nav>li {
+    position: relative;
+}
+
+ul.parent-nav ul.child-nav li {
+    font-size: 14px;
+}
+
+div.tip-bubble {
+    background: #f8f8f8;
+    padding: 5px 30px;
+    margin: 0 0 15px 0;
+    border-left: 5px solid mediumseagreen;
+}
+
+span.how-do {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .125em;
+    display: block;
+    margin-bottom: 5px;
+    color: mediumseagreen;
+}
+
+a.cstmzr-link {
+    display: block;
+    max-width: 200px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #0073aa;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .125em;
+    font-size: 12px;
+}
+
+ul.options-list {
+    list-style: disc;
+    width: calc(50% - 20px);
+    float: left;
+    padding-left: 20px;
+    margin: 15px 0;    
+    font-size: 16px;
+}
+
+span.options-heading {
+    display: block;
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+}
+
+.nested-subsection {
+    margin-bottom: 30px;
+    border-bottom: thin solid #eaeaea;
+    padding-bottom: 15px;
+}
+
+section.sub-section .nested-subsection:last-child {
+    margin-bottom: 30px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sub-section img {
+    border: 15px solid #f5f5f5;
+    max-width: calc(100% - 30px);
+}
+
+div#pepsi-features-notice {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+div#pepsi-features-notice h3 {
+    color: #fff;
+    background: #f04264;
+    padding: 30px 20px 30px 20px;
+    text-transform: uppercase;
+    letter-spacing: .250em;
+    margin: 0;
+    border-radius: 3px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    font-size: 18px;
+}
+
+div#pepsi-features-notice p {
+    padding: 0 30px;
+    font-size: 17px;
+}
+
+div#pepsi-features-notice span.fas {
+    display: block;
+    border: 2px solid;
+    font-size: 40px;
+    border-radius: 50%;
+    padding: 17px 15px 17px 20px;
+    margin-right: 20px;
+}
+
+section.welcome-feature {
+    width: 50%;
+    float: left;
+}
+
+section.welcome-feature img {
+    width: 100%;
+    border: 15px solid #f5f5f5;
+}
+
+section.welcome-feature p {
+    margin: 0;
+    padding-right: 15px;
+}
+
+section.welcome-feature h3 {
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    font-weight: 900;
+    margin: 30px 0 15px 0;
+    border-bottom: thin solid #a6aaae;
+    padding-bottom: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.feature-img-wrap {
+    padding-right: 45px;
+    margin-bottom: 20px;
+}
+
+.quickstart-cta img {
+    max-width: 100%;
+}
+
+@media (max-width:1199px) {
+    div#pepsi-features-notice {
+        display: block;
+    }
+    div#pepsi-features-notice h3 {
+        min-height: unset;
+        padding: 15px;
+    }
+    div#pepsi-features-notice p {
+        padding: 15px 30px;
+        margin: 0;
+    }
+    .quickstart-cta a {
+        padding: 0 5px;
+    }
+    div#pepsi-docs-content {
+        font-size: 16px;
+    }
+    div#pepsi-docs-content p {
+        font-size: 16px;
+    }
+}

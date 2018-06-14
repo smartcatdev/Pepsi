@@ -1,0 +1,55 @@
+#customize-controls .control-section-companion-plugin .accordion-section-title:hover,
+#customize-controls .control-section-companion-plugin .accordion-section-title:focus {
+    background-color: #f1f1f1 !important;
+}
+
+
+#customize-controls .control-section-companion-plugin .accordion-section-title {
+    border-bottom: none;
+    background-color: #f1f1f1 !important;
+}
+
+#accordion-section-pepsi_docs .accordion-section-details {
+    background-color: #fff;
+    margin: 0;
+    padding: 10px 10px 11px 14px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+
+#accordion-section-pepsi_pro h3.accordion-section-title{
+    padding: 18px 14px;
+    background: #ed1558 !important;
+    border-left-color: #ed1558;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#accordion-section-pepsi_pro:hover h3.accordion-section-title {
+    background: #ed1558 !important;
+    border-left-color: #ed1558 !important;
+    color: #fff !important;
+    
+}
+
+#accordion-section-pepsi_pro h3.accordion-section-title .button.button-primary,
+#accordion-section-pepsi_pro:hover h3.accordion-section-title .button.button-primary {
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-shadow: none;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.control-section-companion-plugin .accordion-section-title .button {
+    margin-top:  -4px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.rtl .control-section-companion-plugin .accordion-section-title .button {
+    margin-left:  0;
+    margin-right: 8px;
+}

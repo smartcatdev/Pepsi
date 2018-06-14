@@ -1,0 +1,139 @@
+a {
+    text-decoration: none !important;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+div.clear {
+    clear: both;
+}
+
+@media (min-width: 768px) {
+    .desktop-hidden {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+/* ----- TYPOGRAPHY ----- */
+
+h1 { font-size: 2.75em; }
+h2 { font-size: 2.25em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+/* ----- COLORS & GRADIENTS ----- */
+
+.primary-gradient {
+    background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .65) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .65) 100%);
+    background: linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .65) 100%);
+}
+
+.solids-gradient {
+    background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: linear-gradient(190deg, #fd5f65 0%, #fd5f65 100%);
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0089a0', endColorstr='#00adad',GradientType=1 ); */
+}
+
+.dark-unsat-gradient {
+    background: -moz-linear-gradient(190deg, rgba(26, 26, 26, 0.75) 0%, hsl(0, 0%, 0%) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(26, 26, 26, 0.75) 0%, hsl(0, 0%, 0%) 100%);
+    background: linear-gradient(190deg, rgba(26, 26, 26, 0.75) 0%, hsl(0, 0%, 0%) 100%);
+}
+
+.cascade-gradient {
+    background: -moz-linear-gradient(180deg, rgba(9,0,51,0.85) 0%, rgba(0,0,0,0.65) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(9,0,51,0.85) 0%, rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(180deg, rgba(9,0,51,0.85) 0%, rgba(0,0,0,0.65) 100%);
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0089a0', endColorstr='#00adad',GradientType=1 ); */
+}
+
+/* ----- TABLES & VERTICAL ALIGNMENT ----- */
+
+.util-tbl-wrap {
+    display: table;
+    width: 100%;
+}
+.util-tbl-wrap > .util-tbl-inner {
+    display: table-cell;
+}
+.util-vert-mid {
+    vertical-align: middle;
+}
+.util-vert-top {
+    vertical-align: top;
+}
+.util-vert-btm {
+    vertical-align: bottom;
+}
+
+/* ----- FLEXBOX ----- */
+
+.flxbx {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+.flxbx.top {
+    align-content: flex-start;
+}
+.flxbx.mid {
+    align-content: center;
+}
+.flxbx.btm {
+    align-content: flex-end;
+}
+.flxbx.left {
+    justify-content: flex-start;
+}
+.flxbx.center {
+    justify-content: center;
+}
+.flxbx.right {
+    justify-content: flex-end;
+}
+
+
+/* ----- PEPSI PARALLAX ----- */
+
+.pepsi_parallax {
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.plx-img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 125%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ----- JQUERY PARALLAX ----- */
+
+.jparallax-viewport {
+    position: relative;     /* relative, absolute, fixed */
+    overflow: hidden;
+}
+.jparallax-layer {
+    position: absolute;
+}
