@@ -42,6 +42,13 @@ interface PEPSI_OPTIONS {
             CUSTOM_HEADER_SHOW_ON_SHOP              = 'custom_header_show_on_shop',
             CUSTOM_HEADER_MENU_BUTTONS              = 'custom_Header_menu_buttons',
             
+            MARQUEE_HEADER_ALIGNMENT                = 'custom_header_marquee_alignment',
+            MARQUEE_HEADER_BACKGROUND_TOGGLE        = 'custom_header_marquee_background_toggle',
+            MARQUEE_HEADER_BORDER_TOGGLE            = 'custom_header_marquee_border_toggle',
+            MARQUEE_HEADER_BORDER_THICKNESS         = 'custom_header_marquee_border_thickness',
+            MARQUEE_HEADER_BORDER_COLOR             = 'custom_header_marquee_border_color',
+            MARQUEE_HEADER_BORDER_RADIUS            = 'custom_header_marquee_border_radius',
+            
             GRADIENT_STYLE                          = 'parallax_layers_gradient_style',
             GRADIENT_OVERALL_OPACITY                = 'parallax_layers_gradient_overall_opacity',
             GRADIENT_LINEAR_DIRECTION               = 'parallax_layers_gradient_linear_direction',
@@ -220,6 +227,13 @@ interface PEPSI_DEFAULTS {
             CUSTOM_HEADER_SHOW_ON_SHOP              = false,
             CUSTOM_HEADER_MENU_BUTTONS              = true,
             
+            MARQUEE_HEADER_ALIGNMENT                = 'center',
+            MARQUEE_HEADER_BACKGROUND_TOGGLE        = true,
+            MARQUEE_HEADER_BORDER_TOGGLE            = false,
+            MARQUEE_HEADER_BORDER_THICKNESS         = 5,
+            MARQUEE_HEADER_BORDER_COLOR             = '#000000',
+            MARQUEE_HEADER_BORDER_RADIUS            = 1,
+            
             GRADIENT_STYLE                          = 'linear',
             GRADIENT_OVERALL_OPACITY                = .9,
             GRADIENT_LINEAR_DIRECTION               = 'up',
@@ -245,7 +259,7 @@ interface PEPSI_DEFAULTS {
             BLOG_CARD_FONT_SIZE_MBL                 = 20,
             BLOG_META_FONT_SIZE                     = 12,
             
-            TOOLBAR_HEIGHT                          = 60,
+            TOOLBAR_HEIGHT                          = 40,
             
             NAVBAR_STYLE                            = 'slim_left',
             NAVBAR_HIDE_TAGLINE                     = true,

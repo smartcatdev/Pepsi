@@ -268,6 +268,7 @@ $data = array (
                             'label'         => __( 'Header - Parallax Style', 'pepsi' ),
                             'default'       => PEPSI_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE,
                             'choices'   => array (
+                                'marquee'               => __( 'Marquee', 'pepsi' ),
                                 'parallax_vertical'     => __( 'Vertical Scroll', 'pepsi' ),
                                 'parallax_layers'       => __( 'Perspective Layers', 'pepsi' ),
                             )
@@ -469,6 +470,57 @@ $data = array (
                     )
 
                 ),
+                
+                // Section : Custom Header - Marquee Settings ------------------
+                'section_custom_header_marquee' => array (
+
+                    'title' => __( 'Marquee Style - Settings', 'pepsi' ),
+                    'options' => array (
+
+                        PEPSI_OPTIONS::MARQUEE_HEADER_ALIGNMENT => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Marquee Box - Alignment', 'pepsi' ),
+                            'default'       => PEPSI_DEFAULTS::MARQUEE_HEADER_ALIGNMENT,
+                            'choices'   => array (
+                                'flex-start'        => __( 'Left Side', 'pepsi' ),
+                                'center'            => __( 'Centered', 'pepsi' ),
+                                'flex-end'          => __( 'Right Side', 'pepsi' ),
+                            )
+                        ),
+                        
+                        PEPSI_OPTIONS::MARQUEE_HEADER_BACKGROUND_TOGGLE => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Use Solid Background Color?', 'pepsi' ),
+                            'default'       => PEPSI_DEFAULTS::MARQUEE_HEADER_BACKGROUND_TOGGLE,
+                        ),
+                       
+                        PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_TOGGLE => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Add Border to Marquee Box?', 'pepsi' ),
+                            'default'       => PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_TOGGLE,
+                        ),
+                        
+                        PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_THICKNESS => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Border Thickness', 'pepsi' ),
+                            'default'       => PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_THICKNESS
+                        ),
+                        
+                        PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_COLOR => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Border Color', 'pepsi' ),
+                            'default'       => PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_COLOR,
+                        ),
+                        
+                        PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_RADIUS => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Border Radius', 'pepsi' ),
+                            'default'       => PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_RADIUS
+                        ),
+ 
+                    )
+
+                ),
 
                 // Section : Custom Header - Menu Settings ---------------------
                 'section_custom_header_menu' => array (
@@ -536,7 +588,7 @@ $data = array (
 
                 ),
 
-                // Section : Custom Header Style - Parallax Layers -------------
+                // Section : Color & Gradient Overlay --------------------------
                 'section_custom_header_plx_vertical' => array (
 
                     'title' => __( 'Color / Gradient Overlay', 'pepsi' ),

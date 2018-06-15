@@ -46,13 +46,13 @@ function acid_register_html_editor() {
 
             <?php
         }
-        
+
         public function edit_editor_setting_link( $output ) {
             
             return preg_replace( '/<textarea/', '<textarea ' . $this->get_link(), $output, 1 );
             
         }
-
+        
     }
 
 }

@@ -94,6 +94,7 @@ if ( !function_exists( 'pepsi_setup' ) ) :
             'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'pepsi' ),
             'mobile-menu'               => esc_html__( 'Mobile', 'pepsi' ),
             'custom-header'             => esc_html__( 'Custom Header', 'pepsi' ),
+            'toolbar-menu'              => esc_html__( 'Toolbar Menu', 'pepsi' ),
         ) );
 
         /*

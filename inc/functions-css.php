@@ -31,6 +31,7 @@ function pepsi_wp_head_styles() { ?>
         ul#mobile-menu li a,
         ul.slim-header-menu > li a,
         ul#custom-header-menu > li a,
+        ul#toolbar-menu > li a,
         .blog_item_wrap .blog_item .inner .blog-meta,
         .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta,
         ul.product_list_widget .product-wrap .product-title,
@@ -55,7 +56,8 @@ function pepsi_wp_head_styles() { ?>
         <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_LINKS_FONT_FAMILY, PEPSI_DEFAULTS::NAVBAR_LINKS_FONT_FAMILY ) == 'secondary' ) : ?>
 
             ul#mobile-menu li a,
-            ul.slim-header-menu > li a {
+            ul.slim-header-menu > li a,
+            ul.toolbar-menu > li a {
                 font-family: <?php echo esc_attr( get_theme_mod( PEPSI_OPTIONS::FONT_SECONDARY, PEPSI_DEFAULTS::FONT_SECONDARY ) ); ?>;
             }
 
@@ -135,7 +137,9 @@ function pepsi_wp_head_styles() { ?>
         table.edd-table td a.edd_download_file_link:focus,
         form.edd_form .edd-submit.button,
         form.edd_form .edd-submit.button:hover,
-        form.edd_form .edd-submit.button:focus {
+        form.edd_form .edd-submit.button:focus,
+        div#dual-header-toolbar,
+        div#custom-header-content.marquee-header .marquee-inner {
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
         
@@ -259,6 +263,7 @@ function pepsi_wp_head_styles() { ?>
         <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_STYLE, PEPSI_DEFAULTS::NAVBAR_STYLE ) == 'banner' && ! get_theme_mod( PEPSI_OPTIONS::NAVBAR_TRANSPARENT_MENU_BG, PEPSI_DEFAULTS::NAVBAR_TRANSPARENT_MENU_BG ) ) : ?>
         
             header#masthead.header-style-banner #banner-header-wrap #banner-header-menu-wrap,
+            header#masthead.header-style-dual #banner-header-wrap #banner-header-menu-wrap,
             ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
                 background-color: <?php echo esc_attr( $theme_colors['navbar_menu_bg'] ); ?>;
             }
@@ -274,13 +279,11 @@ function pepsi_wp_head_styles() { ?>
         }
 
         header#masthead.header-style-slim .navbar-social a.navbar-icon,
-        header#masthead.header-style-dual .navbar-social a.navbar-icon,
         header#masthead.header-style-split div#split-social-slide-in a.navbar-icon {
             color: <?php echo esc_attr( $theme_colors['social_fg'] ); ?>;
         }
 
         header#masthead.header-style-slim .navbar-social a.navbar-icon:hover,
-        header#masthead.header-style-dual .navbar-social a.navbar-icon:hover,
         header#masthead.header-style-split div#split-social-slide-in a.navbar-icon:hover {
             color: <?php echo esc_attr( $theme_colors['social_fg_hov'] ); ?>;
         }
@@ -344,7 +347,7 @@ function pepsi_wp_head_styles() { ?>
                     padding-top: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_STICKY_HEIGHT, PEPSI_DEFAULTS::NAVBAR_STICKY_HEIGHT ) - 1 ); ?>px;
                 }
             }
-            
+        
         <?php endif; ?>
 
         <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_HAS_SHADOW, PEPSI_DEFAULTS::NAVBAR_HAS_SHADOW ) ) : ?>
@@ -428,17 +431,7 @@ function pepsi_wp_head_styles() { ?>
 /*        div#dual-header-toolbar {
             height: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::TOOLBAR_HEIGHT, PEPSI_DEFAULTS::TOOLBAR_HEIGHT ) ); ?>px;
         }
-        
-        body header#masthead.header-style-dual #slim-header-wrap {
-            top: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::TOOLBAR_HEIGHT, PEPSI_DEFAULTS::TOOLBAR_HEIGHT ) ); ?>px;
-        }
-
-        @media (min-width:992px) {
-            body.admin-bar header#masthead.header-style-dual #slim-header-wrap {
-                top: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::TOOLBAR_HEIGHT, PEPSI_DEFAULTS::TOOLBAR_HEIGHT ) + 32 ); ?>px;
-            }
-        }*/
-        
+       
         /* ----- Slim Navbars: Collapse ------------------------------------- */
 
         @media (min-width:992px) {
@@ -518,13 +511,11 @@ function pepsi_wp_head_styles() { ?>
 
         <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_RIGHT_ALIGN_MENU, PEPSI_DEFAULTS::NAVBAR_RIGHT_ALIGN_MENU ) ) : ?>
         
-            header#masthead.header-style-slim div#slim-header .right-half,
-            header#masthead.header-style-dual div#slim-header .right-half {
+            header#masthead.header-style-slim div#slim-header .right-half {
                 justify-content: flex-end;
             }
             @media (min-width:992px) {
-                header#masthead.header-style-slim div#slim-header .left-half,
-                header#masthead.header-style-dual div#slim-header .left-half {
+                header#masthead.header-style-slim div#slim-header .left-half {
                     display: none;
                 }
             }
@@ -542,20 +533,24 @@ function pepsi_wp_head_styles() { ?>
 
         /* ----- Banner Navbar: Logo Settings ------------------------------- */
         
-        header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap img.custom-logo {
+        header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap img.custom-logo,
+        header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap img.custom-logo {
             height: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_LOGO_HEIGHT_DSK, PEPSI_DEFAULTS::NAVBAR_LOGO_HEIGHT_DSK ) ); ?>px;
         }
         
-        header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+        header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap,
+        header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap {
             padding-top: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_DSK, PEPSI_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_DSK ) ); ?>px;
             padding-bottom: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK, PEPSI_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK ) ); ?>px;
         }
         
         @media (max-width:991px) {
-            header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap img.custom-logo {
+            header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap img.custom-logo,
+            header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap img.custom-logo {
                 height: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_LOGO_HEIGHT_MBL, PEPSI_DEFAULTS::NAVBAR_LOGO_HEIGHT_MBL ) ); ?>px !important;
             }
-            header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+            header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap,
+            header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap {
                 padding-top: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_MBL, PEPSI_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_MBL ) ); ?>px;
                 padding-bottom: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL, PEPSI_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL ) ); ?>px;
             }
@@ -563,7 +558,8 @@ function pepsi_wp_head_styles() { ?>
         
         <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_ALIGNMENT, PEPSI_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT ) == 'right' || get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_ALIGNMENT, PEPSI_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT ) == 'center' ) : ?>
         
-            header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+            header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap,
+            header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap {
                 text-align: <?php echo esc_attr( get_theme_mod( PEPSI_OPTIONS::NAVBAR_BRANDING_ALIGNMENT, PEPSI_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT ) ); ?>;
             }
         
@@ -573,30 +569,36 @@ function pepsi_wp_head_styles() { ?>
         
             <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_MENU_ALIGNMENT, PEPSI_DEFAULTS::NAVBAR_MENU_ALIGNMENT ) == 'right' ) : ?>
             
-                header#masthead.header-style-banner ul#banner-header-primary {
+                header#masthead.header-style-banner ul#banner-header-primary,
+                header#masthead.header-style-dual ul#banner-header-primary {
                     float: right;
                 }
                 
-                header#masthead.header-style-banner #mobile-menu-trigger {
+                header#masthead.header-style-banner #mobile-menu-trigger,
+                header#masthead.header-style-dual #mobile-menu-trigger {
                     margin: 15px 15px 0 auto;
                 }
                 
-                header#masthead.header-style-banner ul#mobile-menu {
+                header#masthead.header-style-banner ul#mobile-menu,
+                header#masthead.header-style-dual ul#mobile-menu {
                     text-align: right;
                 }
             
             <?php else : ?>
         
-                header#masthead.header-style-banner ul#banner-header-primary {
+                header#masthead.header-style-banner ul#banner-header-primary,
+                header#masthead.header-style-dual ul#banner-header-primary {
                     float: none;
                     margin: 0 auto;
                 }
         
-                header#masthead.header-style-banner #mobile-menu-trigger {
+                header#masthead.header-style-banner #mobile-menu-trigger,
+                header#masthead.header-style-dual #mobile-menu-trigger {
                     margin: 15px auto 0;
                 }
                 
-                header#masthead.header-style-banner ul#mobile-menu {
+                header#masthead.header-style-banner ul#mobile-menu,
+                header#masthead.header-style-dual ul#mobile-menu {
                     text-align: center;
                 }
                 
@@ -852,7 +854,7 @@ function pepsi_wp_head_styles() { ?>
 
         /* ----- Match Height : Vertical Scroll Parallax Header Only ----- */
         
-        <?php if ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_STYLE, PEPSI_DEFAULTS::NAVBAR_STYLE ) != 'banner' && get_theme_mod( PEPSI_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, PEPSI_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' && get_theme_mod( PEPSI_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT, PEPSI_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT ) == 100 && get_theme_mod( 'custom_header_style_toggle', 'parallax_vertical' ) == 'parallax_vertical' ) : ?>
+        <?php if ( ( get_theme_mod( PEPSI_OPTIONS::NAVBAR_STYLE, PEPSI_DEFAULTS::NAVBAR_STYLE ) != 'banner' && get_theme_mod( PEPSI_OPTIONS::NAVBAR_STYLE, PEPSI_DEFAULTS::NAVBAR_STYLE ) != 'dual' ) && get_theme_mod( PEPSI_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, PEPSI_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' && get_theme_mod( PEPSI_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT, PEPSI_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT ) == 100 && get_theme_mod( 'custom_header_style_toggle', 'parallax_vertical' ) == 'parallax_vertical' ) : ?>
         
             div#pepsi-custom-header.pepsi_parallax,
             div#pepsi-custom-header.pepsi_parallax .util-tbl-wrap {
@@ -918,7 +920,31 @@ function pepsi_wp_head_styles() { ?>
             <?php endif; ?>
             opacity: <?php echo esc_attr( get_theme_mod( PEPSI_OPTIONS::GRADIENT_OVERALL_OPACITY, PEPSI_DEFAULTS::GRADIENT_OVERALL_OPACITY ) ); ?>;
         }
+        
+        /* ----- Custom Header: Marquee ------------------------------------- */
 
+        <?php if ( get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_ALIGNMENT, PEPSI_DEFAULTS::MARQUEE_HEADER_ALIGNMENT ) != 'center' ) : ?>
+            div#custom-header-content.marquee-header {
+                justify-content: <?php echo esc_attr( get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_ALIGNMENT, PEPSI_DEFAULTS::MARQUEE_HEADER_ALIGNMENT ) ); ?>;
+            }
+        <?php endif; ?>
+        
+        <?php if ( ! get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_BACKGROUND_TOGGLE, PEPSI_DEFAULTS::MARQUEE_HEADER_BACKGROUND_TOGGLE ) ) : ?>
+            div#custom-header-content.marquee-header .marquee-inner {
+                background: none !important;
+            }
+        <?php endif; ?>
+        
+        div#custom-header-content.marquee-header .marquee-inner {        
+            border-radius: <?php echo intval( get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_RADIUS, PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_RADIUS ) ); ?>px;
+        }
+            
+        <?php if ( get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_TOGGLE, PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_TOGGLE ) ) : ?>
+            div#custom-header-content.marquee-header .marquee-inner {
+                border: <?php echo esc_attr( get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_THICKNESS, PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_THICKNESS ) ); ?>px solid <?php echo esc_attr( get_theme_mod( PEPSI_OPTIONS::MARQUEE_HEADER_BORDER_COLOR, PEPSI_DEFAULTS::MARQUEE_HEADER_BORDER_COLOR ) ); ?>;
+            }
+        <?php endif; ?>
+            
         /* ---------------------------------------------------------------------
          * Footer
          * ------------------------------------------------------------------ */

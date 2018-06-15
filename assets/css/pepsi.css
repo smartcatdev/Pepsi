@@ -126,10 +126,8 @@ header#masthead {
 
 header#masthead.header-style-slim .site-branding .site-title,
 header#masthead.header-style-split .site-branding .site-title,
-header#masthead.header-style-dual .site-branding .site-title,
 header#masthead.header-style-slim .site-branding .site-tagline,
-header#masthead.header-style-split .site-branding .site-tagline,
-header#masthead.header-style-dual .site-branding .site-tagline {
+header#masthead.header-style-split .site-branding .site-tagline {
     padding: 0 15px;
 }
 
@@ -450,45 +448,38 @@ div#mobile-menu-wrap ul#mobile-menu > li > ul.sub-menu > li > ul.sub-menu > li >
  * Header: Slim Header (Custom B)
  * -------------------------------------------------------------------------- */
 
-header#masthead.header-style-slim img.custom-logo,
-header#masthead.header-style-dual img.custom-logo {
+header#masthead.header-style-slim img.custom-logo {
     margin-left: 0 !important;
 }
 
-header#masthead.header-style-slim #slim-header-wrap #slim-header,
-header#masthead.header-style-dual #slim-header-wrap #slim-header {
+header#masthead.header-style-slim #slim-header-wrap #slim-header {
     position: relative;
 }
 
 @media (min-width:992px) {
 
     header#masthead.header-style-slim #slim-header-wrap #slim-header,
-    header#masthead.header-style-dual #slim-header-wrap #slim-header,
-    header#masthead.header-style-banner #banner-header-wrap #banner-header #banner-header-menu-wrap {
+    header#masthead.header-style-banner #banner-header-wrap #banner-header #banner-header-menu-wrap,
+    header#masthead.header-style-dual #banner-header-wrap #banner-header #banner-header-menu-wrap {
         padding: 0 15px;
     }
     header#masthead.header-style-slim .site-branding,
-    header#masthead.header-style-dual .site-branding,
-    header#masthead.header-style-slim .site-title,
-    header#masthead.header-style-dual .site-title {
+    header#masthead.header-style-slim .site-title {
         text-align: left;
         padding: 0;
         margin-right: 10px;
     }
-    header#masthead.header-style-slim .is-sticky .site-branding .site-tagline,
-    header#masthead.header-style-dual .is-sticky .site-branding .site-tagline {
+    header#masthead.header-style-slim .is-sticky .site-branding .site-tagline {
         transform: none;
     }
-    header#masthead.header-style-slim #slim-header-wrap .left-half,
-    header#masthead.header-style-dual #slim-header-wrap .left-half {
+    header#masthead.header-style-slim #slim-header-wrap .left-half {
         position: absolute;
         right: 15px;
     }
 }
 
 @media (max-width:991px) {
-    header#masthead.header-style-slim img.custom-logo,
-    header#masthead.header-style-dual img.custom-logo {
+    header#masthead.header-style-slim img.custom-logo {
         margin: 0 15px !important;
     }
 }
@@ -497,11 +488,13 @@ header#masthead.header-style-dual #slim-header-wrap #slim-header {
  * Header: Banner (Custom C)
  * -------------------------------------------------------------------------- */
 
-header#masthead.header-style-banner {
+header#masthead.header-style-banner,
+header#masthead.header-style-dual {
     position: relative;
 }
 
-header#masthead.header-style-banner img.custom-logo {
+header#masthead.header-style-banner img.custom-logo,
+header#masthead.header-style-dual img.custom-logo {
     padding: 0;
     margin: 0;
 }
@@ -511,24 +504,28 @@ div#banner-header-wrap {
     background-position: 50%;
 }
 
-header#masthead.header-style-banner div#banner-header-wrap ul.slim-header-menu > li > a {
+header#masthead.header-style-banner div#banner-header-wrap ul.slim-header-menu > li > a,
+header#masthead.header-style-dual div#banner-header-wrap ul.slim-header-menu > li > a {
     padding-top: 1.75em;
     padding-bottom: 1.75em;
     display: inline-block;
 }
 
-header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap,
+header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap {
     display: block;
     text-align: left;
     padding: 0 25px;
 }
 
 @media (max-width: 991px) {
-    header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+    header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap,
+    header#masthead.header-style-dual div#banner-header-wrap #custom-logo-wrap {
         padding-left: 15px;
         padding-right: 15px;
     }
-    header#masthead.header-style-banner div#banner-header-menu-wrap {
+    header#masthead.header-style-banner div#banner-header-menu-wrap,
+    header#masthead.header-style-dual div#banner-header-menu-wrap {
         display: none;
     }
 }
@@ -538,11 +535,13 @@ div#banner-header ul#mobile-menu {
     padding-right: 15px;
 }
 
-header#masthead.header-style-banner img.custom-logo {
+header#masthead.header-style-banner img.custom-logo,
+header#masthead.header-style-dual img.custom-logo {
     padding: 0;
 }
 
-header#masthead.header-style-banner #mobile-menu-trigger {
+header#masthead.header-style-banner #mobile-menu-trigger,
+header#masthead.header-style-dual #mobile-menu-trigger {
     margin: 15px 15px 0;
 }
 
@@ -560,8 +559,7 @@ a.navbar-icon {
 }
 
 @media (max-width: 991px) {
-    header#masthead.header-style-slim div#slim-header .left-half,
-    header#masthead.header-style-dual div#slim-header .left-half {
+    header#masthead.header-style-slim div#slim-header .left-half {
         justify-content: center;
         margin-top: 15px;
     }
@@ -2350,4 +2348,80 @@ form#edd_sl_license_add_site_form input.edd-input {
 
 a.edd-manage-license-back {
     margin-bottom: 30px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Toolbar
+ * -------------------------------------------------------------------------- */
+
+div#dual-header-toolbar {
+    height: 40px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+@media (max-width:991px) {
+    div#dual-header-toolbar {
+        display: none;
+    }
+}
+
+div#dual-header-toolbar > div:nth-child(2),
+div#dual-header-toolbar > ul#toolbar-menu:nth-child(2) {
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+div#dual-header-toolbar ul#toolbar-menu {
+    margin: 0;  
+    padding: 0;
+    display: flex;
+    height: 40px;
+    align-items: center;    
+    float: right;
+}
+
+ul#toolbar-menu li {
+    display: inline-block !important;
+    margin-right: 30px;
+}
+
+ul#toolbar-menu li a {
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    line-height: 40px;
+}
+
+div#dual-header-toolbar div.navbar-social a.navbar-icon {
+    color: #fff;
+        
+}
+
+div#dual-header-toolbar div.navbar-social a.navbar-icon:hover {
+    opacity: .8;
+}
+
+/* -----------------------------------------------------------------------------
+ * Custom Header: Marquee
+ * -------------------------------------------------------------------------- */
+
+div#custom-header-content.marquee-header {
+    display: flex;
+    padding: 30px 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee-inner {
+    background: none;
+    padding: 30px;
+    text-align: center;
+}
+
+#custom-header-overlay.no {
+    background: none !important;
 }
